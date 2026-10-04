@@ -1,10 +1,11 @@
 package dev.dreaght.talkster
 
-import androidx.compose.ui.window.Window
-import androidx.compose.ui.window.application
+import dev.nucleusframework.application.DecoratedWindow
+import dev.nucleusframework.application.NucleusBackend
+import dev.nucleusframework.application.nucleusApplication
 
-fun main() = application {
-    Window(
+fun main() = nucleusApplication(backend = NucleusBackend.Tao) {
+    DecoratedWindow(
         onCloseRequest = ::exitApplication,
         title = "talkster",
     ) {
