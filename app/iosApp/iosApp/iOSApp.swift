@@ -25,8 +25,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             instanceKeeper: nil,
             backHandler: backDispatcher
         ),
-        featureInstaller: DefaultFeatureInstaller.shared,
-        deepLinkUrl: nil
+        platform: IOSPlatform()
     )
 
     func application(_ application: UIApplication, shouldSaveSecureApplicationState coder: NSCoder) -> Bool {

@@ -17,9 +17,12 @@ kotlin {
             baseName = "Shared"
             isStatic = true
 
+            export(project(":shared"))
+
             export(libs.decompose.core)
             export(libs.essenty.lifecycle)
             export(libs.essenty.stateKeeper)
+            export(libs.essenty.backHandler)
         }
     }
 
@@ -62,6 +65,12 @@ kotlin {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.compose.uiTooling)
         }
+        iosMain.dependencies {
+            api(libs.decompose.core)
+            api(libs.essenty.lifecycle)
+            api(libs.essenty.stateKeeper)
+            api(libs.essenty.backHandler)
+        }
         commonMain.dependencies {
             api(project(":shared"))
             implementation(libs.compose.runtime)
@@ -74,6 +83,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
             implementation(libs.decompose.compose)
+            implementation(libs.kotlinx.serialization.json)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
