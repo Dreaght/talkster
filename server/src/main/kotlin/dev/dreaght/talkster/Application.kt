@@ -1,5 +1,6 @@
 package dev.dreaght.talkster
 
+import dev.dreaght.talkster.greeting.sayHello
 import io.ktor.server.application.*
 import io.ktor.server.engine.*
 import io.ktor.server.netty.*

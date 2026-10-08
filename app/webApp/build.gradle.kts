@@ -19,10 +19,25 @@ kotlin {
     }
 
     sourceSets {
-        commonMain.dependencies {
-            implementation(project(":app:shared"))
+        val webCommonMain by creating {
+            dependsOn(commonMain.get())
+            dependencies {
+                implementation(libs.compose.ui)
+            }
+        }
 
-            implementation(libs.compose.ui)
+        val jsMain by getting {
+            dependsOn(webCommonMain)
+            dependencies {
+                implementation(project(":app:shared"))
+            }
+        }
+
+        val wasmJsMain by getting {
+            dependsOn(webCommonMain)
+            dependencies {
+                implementation(project(":app:shared"))
+            }
         }
     }
 }

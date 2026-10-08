@@ -16,6 +16,10 @@ kotlin {
         iosTarget.binaries.framework {
             baseName = "Shared"
             isStatic = true
+
+            export(libs.decompose.core)
+            export(libs.essenty.lifecycle)
+            export(libs.essenty.stateKeeper)
         }
     }
 
@@ -59,21 +63,26 @@ kotlin {
             implementation(libs.compose.uiTooling)
         }
         commonMain.dependencies {
-            api(project(":core"))
+            api(project(":shared"))
             implementation(libs.compose.runtime)
             implementation(libs.compose.foundation)
             implementation(libs.compose.material3)
+            implementation(libs.compose.material.materialIconsCore)
             implementation(libs.compose.ui)
             implementation(libs.compose.components.resources)
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+            implementation(libs.decompose.compose)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
         jsMain.dependencies {
-            implementation(libs.wrappers.browser)
+            api(libs.wrappers.browser)
+        }
+        wasmJsMain.dependencies {
+            api(libs.wrappers.browser)
         }
     }
 }

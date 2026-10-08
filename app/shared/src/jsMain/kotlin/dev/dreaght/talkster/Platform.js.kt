@@ -10,5 +10,3 @@ class JsPlatform : Platform {
         ?.let { (startIndex) -> userAgent.substring(startIndex).substringBefore(" ") }
         ?: "Unknown"
 }
-
-actual fun getPlatform(): Platform = JsPlatform()
