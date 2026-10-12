@@ -16,6 +16,7 @@ pluginManagement {
 
 dependencyResolutionManagement {
     repositories {
+        mavenLocal()
         google {
             mavenContent {
                 includeGroupAndSubgroups("androidx")
@@ -24,6 +25,7 @@ dependencyResolutionManagement {
             }
         }
         mavenCentral()
+        maven("https://maven.frommhund.xyz/releases")
     }
 }
 
@@ -33,6 +35,7 @@ plugins {
 
 include(":app:androidApp")
 include(":app:desktopApp")
+include(":app:waylandApp")
 include(":app:shared")
 include(":app:webApp")
 include(":core")

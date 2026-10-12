@@ -22,6 +22,7 @@ material3 = "1.12.0-alpha03"
 nucleus = "2.5.18"
 decompose = "3.5.0"
 essenty = "2.6.0"
+kortex = "0.1.0"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -57,6 +58,7 @@ decompose-compose = { module = "com.arkivanov.decompose:extensions-compose", ver
 essenty-lifecycle = { module = "com.arkivanov.essenty:lifecycle", version.ref = "essenty" }
 essenty-stateKeeper = { module = "com.arkivanov.essenty:state-keeper", version.ref = "essenty" }
 essenty-backHandler = { module = "com.arkivanov.essenty:back-handler", version.ref = "essenty" }
+kortex-wayland = { module = "com.fromwau.kortex:wayland", version.ref = "kortex" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
